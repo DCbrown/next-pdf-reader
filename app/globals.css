@@ -1,0 +1,443 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Update the header styling */
+header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Ensure the header content remains crisp */
+header > div {
+  position: relative;
+  z-index: 2;
+}
+
+.App {
+  text-align: center;
+  background: linear-gradient(to bottom, #1a237e, #040d17);
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  margin: 0;
+}
+
+.pdf-container {
+  width: 100%;
+  height: calc(100vh - 200px);
+  margin: 60px auto 50px;
+}
+
+.author {
+  color: white;
+}
+
+.author a {
+  color: #fffc11;
+  text-decoration: underline;
+}
+
+.pdf-document .react-pdf__Page:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.pdf-document .react-pdf__Page {
+  display: inline-block;
+  width: auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for separation */
+  min-width: -webkit-fill-available !important;
+}
+
+.pdf-page {
+  /* padding: 5px; */
+  background-color: #f0f0f0; /* Gray background for each page */
+}
+
+.react-pdf__Page__canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.logoBox {
+  padding-top: 10px;
+}
+
+.logoBox img {
+  margin: auto;
+}
+
+.logo {
+  margin: 10px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffffff, #a1a1aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.instructions-text {
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.file-upload-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.request-form-wrapper {
+  width: 500px;
+  margin: auto;
+  padding-bottom: 200px;
+}
+
+.send-button {
+  padding: 10px 20px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 24px #ffeb3b;
+  background-color: #ffca00;
+  color: #fff;
+  font-weight: 900;
+  margin-left: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%2314263b'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 16px center;
+}
+
+.send-button:hover {
+  background-color: #ffe80e;
+  box-shadow: 0 0 30px #ffe80e;
+}
+
+.main-btn {
+  background: linear-gradient(45deg, #8527b0, #772df8);
+  box-shadow: 0 0 24px #9225ff;
+  border: 2px solid #9225ff;
+  border-radius: 100px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.main-btn:hover {
+  background-color: #782bd3 !important;
+  box-shadow: 0 0 34px #7c31d5 !important;
+  text-shadow: 0 0 4px #ffffff3d;
+  border-color: #782bd3 !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.react-chat-viewerBox {
+  border-radius: 10px;
+}
+
+.input-style {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  width: calc(100% - 22px);
+  height: 46px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  color: black;
+}
+
+.input-label {
+  color: #ed9f0c;
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.label-style {
+  display: inline-block;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 100px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.response {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow: auto;
+  height: calc(100vh - 230px);
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Makes the track background transparent */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Light grey scrollbar handle */
+  border-radius: 10px; /* Rounded corners on the scrollbar handle */
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.image-box {
+  margin: auto;
+}
+
+.chat-line {
+  white-space: pre-wrap;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.horizontal-line {
+  border-bottom: 1px solid #d4caca45;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.chat-line {
+  white-space: pre-wrap;
+  display: flex;
+  align-items: flex-start;
+}
+
+.chat-line .avatar {
+  width: 32px;
+  border-radius: 4px;
+  box-shadow: #0000009e 0px 2px 10px;
+}
+
+.chat-line .message {
+  margin-top: 0;
+}
+
+.ai-chat .message {
+  line-height: 18px;
+  text-shadow: 0 0 4px #ffffff9c;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.user-chat > .avatar {
+  /* box-shadow: 0 0 24px #ffffff4f; */
+}
+
+.ai-chat > .avatar {
+  /* box-shadow: 0 0 24px #7d24eb9e; */
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.labels-container {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-tag {
+  background-color: #66ff90;
+  color: #14263b;
+  border-radius: 4px;
+  padding: 2px 8px;
+  height: 20px;
+}
+
+.pdf-chat {
+  position: relative;
+  height: 60%;
+  margin: auto;
+}
+
+.pdf-chat-form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  bottom: 0;
+  margin: 30px auto 0;
+  box-sizing: border-box;
+}
+
+.pdf-chat-form input[type="text"] {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid white;
+  outline: none;
+  box-sizing: border-box;
+  margin: auto;
+  height: 50px;
+  color: black;
+}
+
+.pdf-chat-form > button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.pdf-mic-button {
+  background: linear-gradient(45deg, #1a237e, #040d17);
+  box-shadow: 0 0 24px rgba(26, 35, 126, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  margin: auto;
+  padding: 2rem;
+}
+
+.pdf-mic-button:hover {
+  background: linear-gradient(45deg, #243091, #0c1524);
+  box-shadow: 0 0 34px rgba(26, 35, 126, 0.6);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pdf-mic-button svg {
+  width: 40px;
+  height: 40px;
+}
+
+.pdf-mic-button span {
+  font-size: 1rem;
+}
+
+.pdf-mic-button.pdf-stop {
+  background: linear-gradient(45deg, #7f1d1d, #450a0a);
+  box-shadow: 0 0 24px rgba(220, 38, 38, 0.4);
+}
+
+.pdf-mic-button.pdf-stop:hover {
+  background: linear-gradient(45deg, #991b1b, #550c0c);
+  box-shadow: 0 0 34px rgba(220, 38, 38, 0.6);
+}
+
+.pdf-loading-spinner {
+  display: inline-block;
+  margin: 30px auto;
+  width: 30px;
+  height: 30px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  border-top-color: #e02aff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 75px auto 20px;
+    height: auto;
+  }
+
+  .author {
+    font-size: 12px;
+  }
+
+  .response {
+    /* height: calc(100vh - 230px); */
+    height: 100%;
+  }
+}
+
+.pdf-button {
+  background: #0066ff;
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.pdf-button:hover {
+  background: #0052cc;
+  transform: scale(1.05);
+}
+
+.pdf-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.pdf-mic-button.opacity-50 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pdf-mic-button.opacity-50:hover {
+  transform: none;
+  background: #0066ff;
+}
