@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useUser, useClerk } from "@clerk/nextjs";
 import Vapi from "@vapi-ai/web";
-import { getSitePrompt } from "../utils/getPDFPrompts";
 import { PdfContent } from "../types/PdfContent";
 import { createChatAssistant } from "./assistant/chat.assistant";
 export const vapi = new Vapi(process.env.NEXT_PUBLIC_VAPI_TOKEN!);
@@ -29,7 +28,6 @@ const Chat: React.FC<ChatProps> = ({ pdfText, isPdfUploaded }) => {
 
     setCallStatus("loading");
     const pdfContent: PdfContent = { pdfText };
-    const prompts = getSitePrompt(pdfContent);
 
     const assistant = createChatAssistant(pdfContent);
     await vapi.start(process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID!, assistant);

@@ -106,11 +106,6 @@ const PdfUploader: React.FC<Props> = ({ setPdfText, setSelectedFile }) => {
     setIsDragOver(true);
   };
 
-  const handleDragLeave = (event: React.DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    setIsDragOver(false);
-  };
-
   const handleButtonUpload = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
