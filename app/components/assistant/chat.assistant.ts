@@ -4,7 +4,7 @@ import { PdfContent } from "../../types/PdfContent";
 export const createChatAssistant = (
   pdfContent: PdfContent
 ): CreateAssistantDTO => ({
-  name: "Site Reader",
+  name: "PDF Reader",
   model: {
     provider: "openai",
     model: "gpt-3.5-turbo",
