@@ -18,7 +18,6 @@ export const createChatAssistant = (
         1. The user will provide a text from a PDF. Take the personality of the character that
         would be the most fitting to be an expert on the material of the text.
         2. Answer to the user's questions based on it.
-        3. If the user dose not upload a PDF, ask them to upload one.
         -------
         PDF TEXT: ${pdfContent.pdfText}`,
       },
