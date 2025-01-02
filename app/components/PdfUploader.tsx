@@ -122,7 +122,7 @@ const PdfUploader: React.FC<Props> = ({ setPdfText, setSelectedFile }) => {
       }
       await readPdf(file);
     } catch (error) {
-      setError("There was an error reading the resume. Please try again.");
+      setError("There was an error reading the pdf. Please try again.");
     }
   };
 
